@@ -7,14 +7,25 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Start");
         final List<Integer> list = generateList(10000000);
-        //System.out.println(list.toString());
+
+
         long time = System.currentTimeMillis();
         List<Integer> mergeSorted = MergeSort.sort(list);
-        System.out.println(System.currentTimeMillis()-time);
-        //System.out.println(mergeSorted.toString());
+        time = System.currentTimeMillis()-time;
+        System.out.println("Czas merge sort: ");
+        System.out.println(time);
+
+        time = System.currentTimeMillis();
+        List<Integer> quickSorted = QuickSort.sort(list);
+        time = System.currentTimeMillis()-time;
+        System.out.println("Czas quick sort: ");
+        System.out.println(time);
+
         time = System.currentTimeMillis();
         list.sort(Integer::compareTo);
-        System.out.println(System.currentTimeMillis()-time);
+        time = System.currentTimeMillis()-time;
+        System.out.println("Czas domyślny sort: ");
+        System.out.println(time);
 
     }
 
